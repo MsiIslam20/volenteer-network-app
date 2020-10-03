@@ -23,7 +23,10 @@ const Header = () => {
                                 <a className="nav-link" href="#0">Donation</a>
                             </li>    
                             <li className="nav-item">
-                                <a className="nav-link" href="#0">Events</a>
+                                {
+                                    loggedInUser.name ? <Link to="/events"><p className="nav-link">Events</p></Link> :
+                                    <Link to="/login"><p className="nav-link">Events</p></Link>
+                                }
                             </li> 
                             <li className="nav-item">
                                 <a className="nav-link" href="#0">Blog</a>
