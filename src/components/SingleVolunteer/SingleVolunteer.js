@@ -5,7 +5,7 @@ import './SingleVolunteer.css'
 const SingleVolunteer = (props) => {
     const {name, img, _id} = props.vn;
 
-    const history = useHistory()
+    const history = useHistory();
     const handleSubmit = (id) => {
         history.push("/register")
     }
