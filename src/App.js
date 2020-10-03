@@ -9,14 +9,22 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home';
 import Volenteers from './components/Volenteers/Volenteers';
+import Register from './components/Register/Register';
 
 function App() {
   return (
     <>
       <Router>
-        <Header />
-        <Home />
-        <Volenteers />
+        <Switch>
+          <Route exact path="/">
+            <Header />
+            <Home />
+            <Volenteers />
+          </Route>
+          <Route path="/registers">
+            <Register />
+          </Route>
+        </Switch>
       </Router>
     </>
   );
