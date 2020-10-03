@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import {
@@ -10,10 +10,15 @@ import {
 import Home from './components/Home/Home';
 import Volenteers from './components/Volenteers/Volenteers';
 import Register from './components/Register/Register';
+import LogIn from './components/LogIn/LogIn';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
           <Route exact path="/">
@@ -21,12 +26,15 @@ function App() {
             <Home />
             <Volenteers />
           </Route>
-          <Route path="/registers">
+          <PrivateRoute path="/register">
             <Register />
+          </PrivateRoute>
+          <Route path="/login">
+            <LogIn />
           </Route>
         </Switch>
       </Router>
-    </>
+    </UserContext.Provider>
   );
 }
 
