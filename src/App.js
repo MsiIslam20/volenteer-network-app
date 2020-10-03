@@ -26,7 +26,7 @@ function App() {
             <Home />
             <Volenteers />
           </Route>
-          <PrivateRoute path="/register">
+          <PrivateRoute path="/register/:id">
             <Register />
           </PrivateRoute>
           <Route path="/login">

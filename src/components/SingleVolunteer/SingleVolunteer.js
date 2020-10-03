@@ -7,7 +7,7 @@ const SingleVolunteer = (props) => {
 
     const history = useHistory();
     const handleSubmit = (id) => {
-        history.push("/register")
+        history.push("/register/"+ id)
     }
     return (
         <>
