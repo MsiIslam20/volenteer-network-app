@@ -3,14 +3,14 @@ import { useHistory } from 'react-router-dom';
 
 const SingleEvent = (props) => {
     const {vnName, img, date, _id}  = props.event;
-    const handleDelete = (id) => {
+    const handleDelete = (e , id) => {
         fetch(`http://localhost:4000/delete/${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())
         .then(data => {
             if(data){
-                console.log(data);
+                console.log(e.currentTarget);
             }
         })
     }
@@ -27,7 +27,7 @@ const SingleEvent = (props) => {
                             <h4>{vnName}</h4>
                             <h6>Date: {date}</h6>
                             <div className="cancel">
-                                <button onClick={() => handleDelete(_id)} className="btn btn-primary btn-cancel">Cancel</button>
+                                <button onClick={(e) => handleDelete(e, _id)} className="btn btn-primary btn-cancel">Cancel</button>
                             </div>
                         </div>
                     </div>
