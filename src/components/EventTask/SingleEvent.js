@@ -9,7 +9,7 @@ const SingleEvent = (props) => {
         .then(res => res.json())
         .then(data => {
             if(data){
-                e.parentNode.parentNode.parentNode.style.display = 'none';
+                e.offsetParent.offsetParent.offsetParent.style.display = 'none';
             }
         })
     }
