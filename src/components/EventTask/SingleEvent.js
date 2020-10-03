@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
 
 const SingleEvent = (props) => {
     const {vnName, img, date, _id}  = props.event;
@@ -10,7 +9,7 @@ const SingleEvent = (props) => {
         .then(res => res.json())
         .then(data => {
             if(data){
-                console.log(e.currentTarget);
+                e.parentNode.parentNode.parentNode.style.display = 'none';
             }
         })
     }
@@ -27,7 +26,7 @@ const SingleEvent = (props) => {
                             <h4>{vnName}</h4>
                             <h6>Date: {date}</h6>
                             <div className="cancel">
-                                <button onClick={(e) => handleDelete(e, _id)} className="btn btn-primary btn-cancel">Cancel</button>
+                                <button onClick={(e) => handleDelete(e.currentTarget, _id)} className="btn btn-primary btn-cancel">Cancel</button>
                             </div>
                         </div>
                     </div>
