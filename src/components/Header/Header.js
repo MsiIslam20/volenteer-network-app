@@ -18,17 +18,24 @@ const Header = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">                    
                         <ul className="navbar-nav ml-auto">                           
                             <li className="nav-item">
-                                <a className="nav-link" href="#0">Blog</a>
+                                <a className="nav-link" href="#0">Donation</a>
                             </li>    
                             <li className="nav-item">
-                                <a className="nav-link" href="#0">Update</a>
+                                <a className="nav-link" href="#0">Events</a>
                             </li> 
                             <li className="nav-item">
-                                <a className="nav-link" href="#0">Contact</a>
+                                <a className="nav-link" href="#0">Blog</a>
                             </li> 
                             <li className="nav-item">
-                                <a className="nav-link" href="#0">Admin</a>
+                                <Link to="/login">
+                                    <p className="nav-link btn btn-primary btn-main">Register</p>
+                                </Link>
                             </li> 
+                            <li className="nav-item">
+                                <Link to="/">
+                                    <p className="nav-link btn btn-dark btn-main">Admin</p>
+                                </Link>
+                            </li>                             
                         </ul>
                     </div>
                 </div>

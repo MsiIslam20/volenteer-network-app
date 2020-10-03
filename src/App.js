@@ -12,6 +12,7 @@ import Volenteers from './components/Volenteers/Volenteers';
 import Register from './components/Register/Register';
 import LogIn from './components/LogIn/LogIn';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import EventTask from './components/EventTask/EventTask';
 
 export const UserContext = createContext();
 
@@ -32,6 +33,9 @@ function App() {
           <Route path="/login">
             <LogIn />
           </Route>
+          <Route path="/events">
+            <EventTask />
+          </Route>          
         </Switch>
       </Router>
     </UserContext.Provider>

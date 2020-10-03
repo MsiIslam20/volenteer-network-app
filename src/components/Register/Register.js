@@ -2,26 +2,42 @@ import React, { useContext, useEffect, useState } from 'react';
 import logo from '../../images/logo.svg';
 import { useForm } from "react-hook-form";
 import './Register.css'
-import { Link, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
 
 const Register = () => {
+
     const {id} = useParams();
-
     const [loggedInUser , setLoggedInUser] = useContext(UserContext);
-
     const [volunteer, setVolunteer] = useState({});
 
     useEffect(() => {
-        fetch("https://calm-garden-46705.herokuapp.com/product/"+ id)
+        fetch("http://localhost:4000/volunteer/"+ id)
         .then(res => res.json())
         .then(data => {
             setVolunteer(data);
         })
     }, [id])
-
+    const history = useHistory();
     const { register, handleSubmit, errors } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = userData => {
+        const {name, img} = {...volunteer}
+        const registerDetail = {name, img , ...userData};
+        fetch("http://localhost:4000/addRegister", { 
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(registerDetail)
+          })
+          .then(res => res.json())
+          .then(data =>{
+            if(data){
+                history.push("/events")
+            }
+        })
+    }
+
     return (
         <>
             <div className="register-wrapper">
@@ -45,7 +61,7 @@ const Register = () => {
                                                 {errors.date && <span>Date is required</span>}
                                                 <input className="form-control" placeholder="Description" type="text" name="description" ref={register({ required: true })} />
                                                 {errors.description && <span>Description is required</span>} 
-                                                <input className="form-control" placeholder="Organize books at the library." type="text" name="vnName" ref={register({ required: true })} />
+                                                <input className="form-control" placeholder="Organize books at the library." type="text" defaultValue={volunteer.name} name="vnName" ref={register({ required: true })} />
                                                 {errors.vnName && <span>Volunteer name is required</span>}
                                                 <input type="submit" className="btn btn-primary register-btn" value="Register"/>
                                             </form>                                            

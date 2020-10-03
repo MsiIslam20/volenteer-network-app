@@ -10,7 +10,7 @@ const Home = () => {
                 <div className="container">
                     <div className="row d-flex align-items-center">
                         <div className="col-md-12 text-center">
-                            <h1>I grow by helping people in need.</h1>
+                            <h1 className="upper">I grow by helping people in need.</h1>
                             <div className="row">
                                 <div className="col-md-6 mx-auto mt-4">
                                     <div className="search-box">
