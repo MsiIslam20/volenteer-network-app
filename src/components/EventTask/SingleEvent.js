@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const SingleEvent = (props) => {
-    const {vnName, img, date}  = props.event;
+    const {vnName, img, date, _id}  = props.event;
+    const handleDelete = (id) => {
+        fetch(`http://localhost:4000/delete/${id}`, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data){
+                console.log(data);
+            }
+        })
+    }
+
     return (
         <>
             <div className="col-md-6">
@@ -14,7 +27,7 @@ const SingleEvent = (props) => {
                             <h4>{vnName}</h4>
                             <h6>Date: {date}</h6>
                             <div className="cancel">
-                                <button className="btn btn-primary btn-cancel">Cancel</button>
+                                <button onClick={() => handleDelete(_id)} className="btn btn-primary btn-cancel">Cancel</button>
                             </div>
                         </div>
                     </div>
