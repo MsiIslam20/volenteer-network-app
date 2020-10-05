@@ -13,6 +13,8 @@ import Register from './components/Register/Register';
 import LogIn from './components/LogIn/LogIn';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import EventTask from './components/EventTask/EventTask';
+import AdminPanel from './components/AdminPanel/AdminPanel';
+import AddNewEvent from './components/AdminPanel/AddNewEvent';
 
 export const UserContext = createContext();
 
@@ -35,7 +37,13 @@ function App() {
           </Route>
           <Route path="/events">
             <EventTask />
-          </Route>          
+          </Route>  
+          <Route path="/admin">
+            <AdminPanel />
+          </Route>   
+          <Route path="/addevent">
+            <AddNewEvent />
+          </Route>                           
         </Switch>
       </Router>
     </UserContext.Provider>

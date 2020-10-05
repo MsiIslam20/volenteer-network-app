@@ -20,7 +20,7 @@ const Volenteers = () => {
                             <div className="volunteer-inner">
                                 <div className="row">
                                     {
-                                        volunteers.map(vn => <SingleVolunteer key={vn.key} vn={vn}></SingleVolunteer>)
+                                        volunteers.map(vn => <SingleVolunteer key={vn._id} vn={vn}></SingleVolunteer>)
                                     }
                                 </div>
                             </div>

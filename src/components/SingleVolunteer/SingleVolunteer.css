@@ -71,6 +71,9 @@
 .volunteer-inner .col-md-3:nth-child(20) h3{
     background: #FFBD3E;
 }
+.volunteer-inner .col-md-3 h3{
+    background: #421FCF;
+}
 .sn-volunteer{
     position: relative;
     margin-bottom: 30px;
