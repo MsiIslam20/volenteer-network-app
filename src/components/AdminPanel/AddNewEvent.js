@@ -9,7 +9,7 @@ const AddNewEvent = () => {
 
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = userData => {
-        fetch("http://localhost:4000/addProduct", {
+        fetch("https://fast-depths-45518.herokuapp.com/addProduct", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

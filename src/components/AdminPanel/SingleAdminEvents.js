@@ -3,7 +3,7 @@ import React from 'react';
 const SingleAdminEvents = (props) => {
     const {name, email, date, vnName, _id} = props.event;
     const handleDelete = (e , id) => {
-        fetch(`http://localhost:4000/delete/${id}`, {
+        fetch(`https://fast-depths-45518.herokuapp.com/delete/${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())

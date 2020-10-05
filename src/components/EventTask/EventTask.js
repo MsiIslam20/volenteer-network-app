@@ -9,7 +9,7 @@ const EventTask = () => {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/events?email=${loggedInUser.email}`)
+        fetch(`https://fast-depths-45518.herokuapp.com/events?email=${loggedInUser.email}`)
         .then(res => res.json())
         .then(data => {
             setEvents(data)

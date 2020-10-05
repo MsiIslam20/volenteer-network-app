@@ -12,7 +12,7 @@ const Register = () => {
     const [volunteer, setVolunteer] = useState({});
 
     useEffect(() => {
-        fetch("http://localhost:4000/volunteer/"+ id)
+        fetch("https://fast-depths-45518.herokuapp.com/volunteer/"+ id)
         .then(res => res.json())
         .then(data => {
             setVolunteer(data);
@@ -23,7 +23,7 @@ const Register = () => {
     const onSubmit = userData => {
         const {name, img} = {...volunteer}
         const registerDetail = {name, img , ...userData};
-        fetch("http://localhost:4000/addRegister", { 
+        fetch("https://fast-depths-45518.herokuapp.com/addRegister", { 
             method: "POST",
             headers: {
               'Content-Type': 'application/json'

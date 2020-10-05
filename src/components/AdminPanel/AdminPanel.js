@@ -8,7 +8,7 @@ const AdminPanel = () => {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/allEvents`)
+        fetch(`https://fast-depths-45518.herokuapp.com/allEvents`)
         .then(res => res.json())
         .then(data => {
             setEvents(data)

@@ -5,7 +5,7 @@ import './Volenteer.css'
 const Volenteers = () => {
     const [volunteers, setVolunteers] = useState([])
     useEffect(() => {
-        fetch("http://localhost:4000/volenteers")
+        fetch("https://fast-depths-45518.herokuapp.com/volenteers")
         .then(res => res.json())
         .then(data => {
             setVolunteers(data)
