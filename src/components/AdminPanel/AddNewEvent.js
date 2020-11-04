@@ -4,7 +4,6 @@ import logo from '../../images/logo.svg';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
-
 const AddNewEvent = () => {
 
     const { register, handleSubmit, errors } = useForm();

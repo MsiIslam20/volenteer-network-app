@@ -6,7 +6,6 @@ const SingleVolunteer = (props) => {
     const {name, img, _id} = props.vn;
     const image = "https://i.ibb.co/VSdRmB3/animal-Shelter.png";
 
-
     const history = useHistory();
     const handleSubmit = (id) => {
         history.push("/register/"+ id)
